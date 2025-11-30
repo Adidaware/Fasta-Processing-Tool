@@ -1,24 +1,15 @@
-# Assignment_2_6200_AD
+# FASTA Processing Toolkit
 
-### File name: *stats_in_python.py*
+## What does this code do ?
+This is a set of Python command-line tools written to make working with FASTA files easier. It helps automate tasks like separating mixed sequence files and calculating nucleotide statistics.
 
-### **Author's Name: Aditya Daware**
+I built this with **robust error handling** and included **unit tests** to ensure reliability.
 
-File description: 
+## The Tools
 
-Given
-: data_file.txt
-: data_file2.txt
-: data_file3.txt
+### Secondary Structure Splitter (`secondary_structure_splitter.py`)
+Sometimes FASTA files contain both amino acid sequences and secondary structure data mixed together. This script reads a file and splits them into two separate clean files.
+* **Input:** A mixed FASTA file.
+* **Output:** `pdb_protein.fasta` (Protein sequences) and `pdb_ss.fasta` (Secondary structures).
 
-**Functions used in this program**
-: def
-: len()
-: *
-: /
-: print
-: if, else
-: try, except
 
-#### **Code function: This code is created to calculate Mathermatical functions including Count, Valid Numbers, Average, Maximun, Minimum, variance, Standard Deviation, Median.
-The code will be same for all the three data files.**
