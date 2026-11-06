@@ -1,5 +1,4 @@
-""" This program is designed to generate two output files with the
-pdb_protein.fasta file and pdb_ss.fasta file """
+""" Count A, G, C, T and N in every sequence of a FASTA file and write a tab-separated report """
 import sys
 import argparse
 
@@ -58,8 +57,8 @@ def print_sequence_stats(header_list, sequence_list, outfile_name):
             t_count = _get_num_nucleotides('T', sequence)
             n_count = _get_num_nucleotides('N', sequence)
 
-            outfile.write(f"{header}\t{accession_string}\t{a_count}\
-            t{g_count}\t{c_count}\t{t_count}\t{n_count}\n")
+            outfile.write(f"{header}\t{accession_string}\t{a_count}\t"
+                          f"{g_count}\t{c_count}\t{t_count}\t{n_count}\n")
 
 def main():  # pragma: no cover
     """ Defining the main argument """
@@ -74,9 +73,7 @@ def main():  # pragma: no cover
         headers, sequences = get_fasta_lists(args.infile)
         _verify_lists(headers, sequences)
 
-        # Assuming the output file is named based on the input file, with a suffix for the stats
-        output_file = args.infile.rsplit('.', 1)[0] + '_stats.txt'
-        print_sequence_stats(headers, sequences, output_file)
+        print_sequence_stats(headers, sequences, args.outfile)
 
     except ValueError as err:
         print(f"Error: {err}", file=sys.stderr)

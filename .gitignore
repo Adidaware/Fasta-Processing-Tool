@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+.DS_Store
+.idea/
+.vscode/
+
+# test output
+test_protein.fasta
+test_ss.fasta
+pdb_protein.fasta
+pdb_ss.fasta
